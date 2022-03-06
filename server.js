@@ -13,6 +13,19 @@ app.get("/", (req, res, next) => {
     });
 });
 
+// GET by ID
+app.get("/:id", (req, res, next) => {
+    res.json({
+        message: "Using GET /:id",
+        metadata: {
+           host: req.hostname,
+           port: process.env.port,
+           method: req.method,
+           id: req.params.id
+        }
+    });
+});
+
 // middleware modules for error handling
 app.use((req, res, next) => {
     const error = new Error("NOT FOUND!!!");
