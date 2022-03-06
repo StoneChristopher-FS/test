@@ -26,6 +26,18 @@ app.get("/:id", (req, res, next) => {
     });
 });
 
+// POST
+app.post("/", (req, res, next) => {
+    res.json({
+        message: "Using POST /",
+        metadata: {
+           host: req.hostname,
+           port: process.env.port,
+           method: req.method
+        }
+    });
+});
+
 // middleware modules for error handling
 app.use((req, res, next) => {
     const error = new Error("NOT FOUND!!!");
