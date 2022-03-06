@@ -4,7 +4,12 @@ const app = express();
 
 app.get("/", (req, res, next) => {
     res.json({
-        message: "Did you GET IT??"
+        message: "Using GET /",
+        metadata: {
+           host: req.hostname,
+           port: process.env.port,
+           method: req.method
+        }
     });
 });
 
