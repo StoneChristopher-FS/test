@@ -38,6 +38,19 @@ app.post("/", (req, res, next) => {
     });
 });
 
+// PUT by id
+app.put("/:id", (req, res, next) => {
+    res.json({
+        message: "Using PUT /:id",
+        metadata: {
+           host: req.hostname,
+           port: process.env.port,
+           method: req.method,
+           id: req.params.id
+        }
+    });
+});
+
 // middleware modules for error handling
 app.use((req, res, next) => {
     const error = new Error("NOT FOUND!!!");
