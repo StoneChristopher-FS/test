@@ -2,7 +2,9 @@ const {
     sum,
     sub,
     mult,
-    divide
+    divide,
+    squareRoot,
+    maxNum
 } = require("./math")
 
 describe("Basic math operations test", () => {
@@ -21,6 +23,18 @@ describe("Basic math operations test", () => {
 
     test("divides 10 by 5 to equal 2", () => {
         expect(divide(10, 5)).toBe(2)
+    })
+
+})
+
+describe("Advanced math operations test", () => {
+
+    test("finds the square root of 81 to equal 9", () => {
+        expect(squareRoot(81)).toBe(9)
+    })
+
+    test("will find the max number between 2 numbers", () => {
+        expect(maxNum(10, 50)).toBe(50)
     })
 
 })
